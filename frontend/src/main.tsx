@@ -34,6 +34,7 @@ import StagesPage from './pages/tournaments/[id]/stages';
 import SwissTournamentPage from './pages/tournaments/[id]/stages/swiss/[stage_item_id]';
 import TeamsPage from './pages/tournaments/[id]/teams';
 import UserPage from './pages/user';
+import SimulatorPage from './pages/simulador';
 
 const theme = createTheme({
   colors: {
@@ -75,6 +76,7 @@ createRoot(document.getElementById('root')!).render(
             <Notifications />
             <Routes>
               <Route index element={<HomePage />} />
+              <Route path="/simulador" element={<SimulatorPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/clubs" element={<ClubsPage />} />
               <Route path="/demo" element={<CreateDemoAccountPage />} />

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.app { min-height: 100vh; background: #f5f7f6; color: #17231f; font-family: 'DM Sans', sans-serif; }
+.topbar { height: 70px; padding: 0 34px; display: flex; align-items: center; justify-content: space-between; background: #fff; border-bottom: 1px solid #e8eeea; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #15241d; font: 800 20px Manrope, sans-serif; letter-spacing: -1px; }
+.brandMark { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 9px; background: #d3f36b; color: #143522; font-size: 19px; }
+.brandAccent { color: #58944d; }
+.topMeta { color: #89968e; font-size: 10px; letter-spacing: 1.4px; font-weight: 700; display: flex; align-items: center; gap: 9px; }
+.liveDot, .liveLabel i { width: 7px; height: 7px; border-radius: 50%; background: #71b957; box-shadow: 0 0 0 3px #e8f4e3; }
+.topDivider { color: #c4cdc6; }
+.profile { border: 0; width: 34px; height: 34px; border-radius: 50%; background: #e9f1e7; color: #4b7946; font-size: 11px; font-weight: 700; }
+.workspace { display: flex; min-height: calc(100vh - 70px); }
+.sidebar { width: 210px; padding: 32px 16px 20px; flex: 0 0 210px; background: #fff; border-right: 1px solid #e8eeea; display: flex; flex-direction: column; }
+.sideLabel { margin: 0 12px 15px; color: #a0aaa3; font-size: 9px; letter-spacing: 1.3px; font-weight: 700; }
+.navItem { color: #758179; text-decoration: none; border-radius: 8px; padding: 12px; margin-bottom: 5px; font-size: 13px; font-weight: 600; display: flex; gap: 12px; align-items: center; }
+.navItem span { width: 18px; text-align: center; font-size: 16px; }
+.activeNav { background: #eff7eb; color: #477d43; }
+.sideBottom { display: flex; align-items: center; gap: 10px; margin-top: auto; padding: 13px 10px; border-top: 1px solid #edf0ed; }
+.statusIcon { color: #79b65b; font-size: 9px; }
+.sideBottom strong, .sideBottom small { display: block; }
+.sideBottom strong { font-size: 10px; font-weight: 700; }
+.sideBottom small { margin-top: 3px; color: #9aa49c; font-size: 9px; }
+.content { width: min(1500px, 100%); margin: 0 auto; padding: 34px 38px 20px; }
+.headingRow { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 23px; }
+.eyebrow, .sectionKicker { color: #7d9d6d; font-size: 9px; font-weight: 700; letter-spacing: 1.35px; }
+.headingRow h1 { margin: 7px 0 5px; color: #18251f; font: 800 28px Manrope, sans-serif; letter-spacing: -1.2px; }
+.subtitle { margin: 0; color: #89948c; font-size: 12px; }
+.saveButton { height: 38px; padding: 0 14px; background: #fff; border: 1px solid #e1e9e1; border-radius: 7px; color: #536a54; font: 600 11px 'DM Sans', sans-serif; cursor: pointer; }
+.saveButton span { margin-right: 7px; font-size: 14px; }
+.mainGrid { display: grid; grid-template-columns: minmax(420px, 1.55fr) minmax(300px, .85fr); gap: 17px; align-items: start; }
+.pitchCard, .settingsCard, .statsCard, .eventsCard { background: #fff; border: 1px solid #e8eeea; border-radius: 10px; box-shadow: 0 2px 8px #192c1b05; }
+.pitchCard { padding: 19px 21px 16px; }
+.cardHeader { display: flex; align-items: center; justify-content: space-between; }
+.cardHeader h2 { margin: 4px 0 0; color: #1d2b24; font: 700 15px Manrope, sans-serif; letter-spacing: -.3px; }
+.formationBadge { min-width: 35px; padding: 6px 9px; background: #eff7eb; border-radius: 5px; color: #548649; text-align: center; font-size: 11px; font-weight: 700; }
+.scoreboard { height: 57px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #edf0ed; margin: 4px 0 14px; }
+.teamName, .awayName { display: flex; align-items: center; gap: 7px; color: #59665d; font-size: 9px; font-weight: 700; letter-spacing: .5px; }
+.teamEmblem, .awayEmblem { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 6px; background: #e5f4dd; color: #518846; font: 700 12px Manrope; }
+.awayEmblem { background: #f1e9e2; color: #a97a57; }
+.score { color: #1b2c21; font: 800 21px Manrope; letter-spacing: 1px; }
+.score span { color: #b7c1b8; font-size: 15px; }
+.matchClock { margin-left: -13%; color: #6e9a5d; font: 700 12px Manrope; }
+.matchClock small { color: #9ba59d; font: 600 8px 'DM Sans', sans-serif; }
+.pitchWrap { padding: 0 4%; }
+.pitch { height: clamp(280px, 31vw, 390px); max-height: 390px; min-height: 280px; position: relative; overflow: hidden; border: 2px solid #d5e8cb; border-radius: 5px; background: repeating-linear-gradient(0deg, #6fa85b 0, #6fa85b 50px, #76af62 50px, #76af62 100px); }
+.pitchLine { position: absolute; top: 50%; left: 0; right: 0; border-top: 1px solid #ffffff8c; }
+.centerCircle { position: absolute; width: 19%; aspect-ratio: 1; border: 1px solid #ffffff91; border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.centerSpot { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: white; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+.penalty { position: absolute; left: 31%; width: 38%; height: 11%; border: 1px solid #ffffff8c; }
+.penaltyTop { top: -1px; border-top: 0; border-radius: 0 0 50% 50%; }
+.penaltyBottom { bottom: -1px; border-bottom: 0; border-radius: 50% 50% 0 0; }
+.goal { position: absolute; left: 43%; width: 14%; height: 3.5%; border: 1px solid #ffffffbd; background: #ffffff17; }
+.goalTop { top: -1px; border-radius: 0 0 3px 3px; }
+.goalBottom { bottom: -1px; border-radius: 3px 3px 0 0; }
+.player { position: absolute; z-index: 2; width: 29px; height: 29px; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; background: #e1fa98; border: 2px solid #fff; box-shadow: 0 2px 5px #25462055; color: #31582b; font: 700 10px Manrope; }
+.player small { position: absolute; top: 30px; white-space: nowrap; padding: 2px 4px; border-radius: 3px; background: #264b2ccc; color: white; font: 600 8px 'DM Sans', sans-serif; }
+.goalkeeper { background: #f1d56d; color: #725d1c; }
+.opponent { width: 25px; height: 25px; background: #e7e9ef; color: #737e90; border-color: #fff; }
+.ball { position: absolute; z-index: 3; color: #fff; font-size: 17px; text-shadow: 0 1px 3px #203c20; transition: left .5s, top .5s; }
+.pitchLegend { display: flex; gap: 18px; padding: 12px 4px; color: #929b94; font-size: 9px; font-weight: 600; }
+.pitchLegend span { display: flex; align-items: center; gap: 6px; }
+.pitchLegend i { width: 7px; height: 7px; border-radius: 50%; }
+.legendHome { background: #c5e87a; }.legendAway { background: #c4cad4; }.legendBall { background: #fff; border: 1px solid #aeb8af; }
+.matchControls { display: flex; align-items: center; gap: 11px; border-top: 1px solid #edf0ed; padding-top: 14px; }
+.playButton { height: 36px; padding: 0 13px; border: 0; border-radius: 6px; background: #4f8e49; color: white; font: 600 10px 'DM Sans', sans-serif; cursor: pointer; }
+.playButton span { margin-right: 5px; }
+.resetButton { border: 0; background: none; color: #87928a; font: 600 10px 'DM Sans', sans-serif; cursor: pointer; }
+.progressWrap { margin-left: auto; width: 105px; text-align: right; }
+.progressTrack { height: 4px; border-radius: 3px; background: #edf1ed; overflow: hidden; }
+.progressTrack span { display: block; height: 100%; background: #82b969; transition: width .3s; }
+.progressWrap small { display: block; margin-top: 5px; color: #9ba49d; font-size: 8px; }
+.settingsColumn { display: flex; flex-direction: column; gap: 14px; }
+.settingsCard { padding: 17px 18px; }
+.tinyIcon, .eventIcon { color: #7caa6e; font-size: 22px; }
+.formationList { display: flex; gap: 7px; margin: 15px 0 18px; }
+.formationOption { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; padding: 8px 6px; border: 1px solid #e8eeea; border-radius: 7px; background: #fff; text-align: left; cursor: pointer; }
+.selectedFormation { border-color: #8dbd77; background: #f4faef; }
+.miniPitch { position: relative; flex: 0 0 25px; height: 33px; border-radius: 3px; background: #82b66c; }
+.miniPitch:after { content: ''; position: absolute; top: 50%; left: 0; right: 0; border-top: 1px solid #ffffffa8; }
+.miniPitch i { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #e1fa98; border: 1px solid white; }
+.miniPitch i:nth-child(1) { left: 4px; top: 7px; }.miniPitch i:nth-child(2) { right: 4px; top: 7px; }.miniPitch i:nth-child(3) { left: 10px; top: 15px; }.miniPitch i:nth-child(4) { left: 10px; bottom: 4px; }
+.formationOption strong, .formationOption small { display: block; }
+.formationOption strong { color: #37463c; font-size: 10px; }
+.formationOption small { margin-top: 3px; color: #9aa49d; font-size: 8px; white-space: nowrap; }
+.radio { margin-left: auto; color: #67a05b; font-size: 12px; }
+.sliderGroup { margin: 14px 0; }
+.sliderGroup label { display: flex; justify-content: space-between; color: #59665e; font-size: 10px; font-weight: 600; }
+.sliderGroup label b { color: #56884d; font-size: 11px; }.sliderGroup label b small { font-size: 9px; }
+.sliderGroup input { display: block; width: 100%; height: 4px; margin: 11px 0 5px; accent-color: #70a95b; cursor: pointer; }
+.rangeLabels { display: flex; justify-content: space-between; color: #a5ada6; font-size: 8px; }
+.durationRow { border-top: 1px solid #edf0ed; padding-top: 13px; display: flex; justify-content: space-between; align-items: center; color: #59665e; font-size: 10px; font-weight: 600; }
+.durationRow select { border: 1px solid #e3eae4; border-radius: 5px; background: #fff; padding: 6px 8px; color: #607066; font: 500 9px 'DM Sans', sans-serif; }
+.rosterCount { padding: 5px 7px; background: #f2f6f1; border-radius: 4px; color: #829285; font-size: 8px; }
+.roster { margin-top: 12px; }
+.rosterPlayer { height: 34px; border-top: 1px solid #f0f2f0; display: flex; align-items: center; gap: 9px; }
+.rosterNumber { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 6px; background: #eff6e9; color: #5a8b4e; font-size: 9px; font-weight: 700; }
+.gkNumber { background: #fbf3d9; color: #9d7b2c; }
+.rosterPlayer input { width: 100%; border: 0; outline: 0; color: #45554a; background: transparent; font: 600 10px 'DM Sans', sans-serif; }
+.rosterPlayer small { color: #a1aaa3; font-size: 8px; }
+.bottomGrid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 17px; margin-top: 16px; }
+.statsCard, .eventsCard { padding: 17px 19px; }
+.liveLabel { display: flex; align-items: center; gap: 7px; color: #83a779; font-size: 8px; font-weight: 700; letter-spacing: .6px; }
+.liveLabel i { width: 6px; height: 6px; }
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 16px; }
+.stat { padding: 0 12px; border-left: 1px solid #edf0ed; }.stat:first-child { padding-left: 0; border-left: 0; }
+.stat > span { display: block; color: #89948c; font-size: 9px; }
+.stat strong { display: block; margin-top: 6px; color: #25352a; font: 700 20px Manrope; }.stat strong small { font-size: 11px; }
+.statHint { color: #a6aea7; font-size: 8px; }
+.statBar { height: 3px; margin-top: 7px; border-radius: 3px; background: #edf1ed; }.statBar i { display: block; height: 100%; background: #82b969; }
+.eventList { margin-top: 12px; }
+.event { min-height: 28px; display: flex; align-items: center; gap: 8px; border-top: 1px solid #f0f2f0; color: #7d8981; font-size: 9px; }
+.eventDot { width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: #9fc98b; }
+.footer { display: flex; justify-content: space-between; padding: 18px 2px 0; color: #a6afa8; font-size: 8px; letter-spacing: .4px; }.footer b { color: #83b26e; padding: 0 4px; }
+@media (max-width: 1050px) { .sidebar { width: 165px; flex-basis: 165px; }.content { padding: 28px 22px 18px; }.mainGrid { grid-template-columns: minmax(360px, 1.2fr) minmax(280px, .9fr); }.formationOption { gap: 4px; padding: 7px 4px; }.miniPitch { flex-basis: 20px; } }
+@media (max-width: 800px) { .sidebar { display: none; }.content { padding: 24px 18px; }.mainGrid { grid-template-columns: 1fr; }.settingsColumn { display: grid; grid-template-columns: 1fr 1fr; }.bottomGrid { grid-template-columns: 1fr; }.pitch { height: 380px; } }
+@media (max-width: 560px) { .topbar { height: 58px; padding: 0 16px; }.topMeta { font-size: 8px; letter-spacing: .6px; }.content { padding: 20px 12px; }.headingRow { align-items: flex-start; gap: 10px; }.headingRow h1 { font-size: 23px; }.subtitle { max-width: 240px; line-height: 1.5; }.saveButton { padding: 0 9px; font-size: 9px; white-space: nowrap; }.settingsColumn { grid-template-columns: 1fr; }.pitchCard { padding: 15px 12px; }.pitch { min-height: 300px; height: 82vw; }.pitchWrap { padding: 0; }.scoreboard { gap: 5px; }.teamName, .awayName { font-size: 7px; }.teamEmblem, .awayEmblem { width: 18px; height: 18px; }.matchClock { margin-left: 0; font-size: 10px; }.matchClock small { display: block; }.statsGrid { grid-template-columns: repeat(2, 1fr); row-gap: 14px; }.stat:nth-child(3) { border-left: 0; padding-left: 0; }.footer { flex-direction: column; gap: 7px; line-height: 1.5; }.matchControls { gap: 7px; }.playButton { padding: 0 9px; }.progressWrap { width: 75px; } }
