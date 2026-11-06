@@ -1,4 +1,4 @@
-import { Grid, Select, Title } from '@mantine/core';
+import { Grid, Paper, Select, Text, Title } from '@mantine/core';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -19,26 +19,51 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <Grid>
-        <Grid.Col span="auto">
-          <Title>{capitalize(t('tournaments_title'))}</Title>
+      <Paper className={classes.welcomePanel} radius="md" p="xl" mb="xl">
+        <Text className={classes.eyebrow}>OCTÓVIUN STUDIOS · GESTÃO ESPORTIVA</Text>
+        <Title order={1} className={classes.pageTitle}>
+          {capitalize(t('tournaments_title'))}
+        </Title>
+        <Text className={classes.welcomeText}>
+          Organize campeonatos, acompanhe partidas e mantenha equipes e atletas em um só lugar.
+        </Text>
+        <div className={classes.crestPlaceholder} aria-label="Espaço reservado para a identidade do clube">
+          <Text size="xs" fw={700} ta="center">
+            ESPAÇO RESERVADO
+          </Text>
+          <Text size="xs" ta="center">
+            Identidade do clube
+          </Text>
+        </div>
+      </Paper>
+
+      <Grid align="end" gutter="md" mb="md">
+        <Grid.Col span={{ base: 12, sm: 6 }}>
+          <Title order={2} size="h3" c="navy.8">
+            Campeonatos
+          </Title>
+          <Text size="sm" c="dimmed" mt={4}>
+            Consulte e gerencie os torneios disponíveis na sua conta.
+          </Text>
         </Grid.Col>
-        <Grid.Col span="content" className={classes.fullWithMobile}>
+        <Grid.Col span={{ base: 12, sm: 3 }}>
           <Select
-            size="md"
-            placeholder="Pick value"
+            label="Status do campeonato"
             data={[
-              { label: 'All', value: 'ALL' },
-              { label: 'Archived', value: 'ARCHIVED' },
-              { label: 'Open', value: 'OPEN' },
+              { label: 'Todos', value: 'ALL' },
+              { label: 'Arquivados', value: 'ARCHIVED' },
+              { label: 'Em andamento', value: 'OPEN' },
             ]}
             allowDeselect={false}
             value={filter}
-            // @ts-ignore
-            onChange={(f: TournamentFilter) => setFilter(f)}
+            onChange={(value) => {
+              if (value != null) {
+                setFilter(value as TournamentFilter);
+              }
+            }}
           />
         </Grid.Col>
-        <Grid.Col span="content" className={classes.fullWithMobile}>
+        <Grid.Col span={{ base: 12, sm: 3 }} className={classes.actionColumn}>
           <TournamentModal swrTournamentsResponse={swrTournamentsResponse} />
         </Grid.Col>
       </Grid>

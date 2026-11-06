@@ -37,6 +37,42 @@ import UserPage from './pages/user';
 
 const theme = createTheme({
   colors: {
+    navy: [
+      '#EAF0FA',
+      '#D8E3F4',
+      '#B9CDEA',
+      '#95B2DF',
+      '#6E92CC',
+      '#4C78BC',
+      '#2F5FA5',
+      '#1D4F8A',
+      '#113C70',
+      '#071B36',
+    ],
+    cobalt: [
+      '#EEF7FF',
+      '#DDEEFF',
+      '#BADBFF',
+      '#90C7FF',
+      '#5EA9FF',
+      '#3D8DF7',
+      '#1765B5',
+      '#114E93',
+      '#0A3D76',
+      '#071B36',
+    ],
+    silver: [
+      '#FFFFFF',
+      '#F5F7FA',
+      '#EDF2F7',
+      '#E0E7F0',
+      '#C9D3E1',
+      '#AEBBCB',
+      '#8E9AAD',
+      '#687787',
+      '#3E4B5A',
+      '#1B2431',
+    ],
     dark: [
       '#C1C2C5',
       '#A6A7AB',
@@ -50,6 +86,14 @@ const theme = createTheme({
       '#101113',
     ],
   },
+  primaryColor: 'cobalt',
+  primaryShade: { light: 6, dark: 7 },
+  defaultRadius: 'md',
+  fontFamily: 'Inter, "Segoe UI", sans-serif',
+  headings: {
+    fontFamily: 'Inter, "Segoe UI", sans-serif',
+    fontWeight: '700',
+  },
 });
 
 function AnalyticsScript() {
@@ -57,12 +101,13 @@ function AnalyticsScript() {
     return null;
   }
 
-  var script = document.createElement('script');
+  const script = document.createElement('script');
   script.setAttribute('async', '');
   script.setAttribute('data-domain', import.meta.env.VITE_ANALYTICS_DATA_DOMAIN);
   script.setAttribute('data-website-id', import.meta.env.VITE_ANALYTICS_DATA_WEBSITE_ID);
   script.setAttribute('src', import.meta.env.VITE_ANALYTICS_SCRIPT_SRC);
   document.head.appendChild(script);
+  return null;
 }
 
 createRoot(document.getElementById('root')!).render(
@@ -70,7 +115,7 @@ createRoot(document.getElementById('root')!).render(
     <NuqsAdapter>
       <BrowserRouter>
         <I18nextProvider i18n={i18n}>
-          <MantineProvider defaultColorScheme="auto" theme={theme}>
+          <MantineProvider defaultColorScheme="light" theme={theme}>
             <BracketSpotlight />
             <Notifications />
             <Routes>

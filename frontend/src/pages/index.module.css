@@ -4,3 +4,74 @@
     padding: var(--mantine-spacing-sm) var(--mantine-spacing-sm);
   }
 }
+
+.welcomePanel {
+  position: relative;
+  overflow: hidden;
+  min-height: rem(190px);
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  color: #ffffff;
+  background-color: #071b36;
+  border: 0;
+}
+
+.eyebrow {
+  margin-bottom: var(--mantine-spacing-sm);
+  color: #aebbcB;
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.pageTitle {
+  max-width: 42rem;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.welcomeText {
+  max-width: 38rem;
+  margin-top: var(--mantine-spacing-sm);
+  color: #e2eaf4;
+  line-height: 1.6;
+}
+
+.crestPlaceholder {
+  position: absolute;
+  top: 50%;
+  right: clamp(1rem, 5vw, 3rem);
+  display: flex;
+  width: rem(116px);
+  height: rem(116px);
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--mantine-spacing-sm);
+  transform: translateY(-50%);
+  color: #dce8f6;
+  border: 1px dashed rgba(220, 232, 246, 0.55);
+  border-radius: 50%;
+  text-align: center;
+}
+
+.actionColumn {
+  @media (max-width: $mantine-breakpoint-xs) {
+    display: flex;
+    justify-content: stretch;
+  }
+}
+
+@media (max-width: 48em) {
+  .crestPlaceholder {
+    position: static;
+    width: auto;
+    height: auto;
+    align-items: flex-start;
+    margin-top: var(--mantine-spacing-lg);
+    padding: 0;
+    transform: none;
+    border: 0;
+    border-radius: 0;
+    text-align: left;
+  }
+}

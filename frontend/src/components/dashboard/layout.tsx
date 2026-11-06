@@ -50,20 +50,20 @@ export function TournamentLogo({ tournamentDataFull }: { tournamentDataFull: Tou
     return <Skeleton height={150} radius="xl" mb="xl" />;
   }
   return tournamentDataFull.logo_path ? (
-    <>
-      <Image
-        radius="lg"
-        mt="1rem"
-        alt="Logo of the tournament"
-        src={`${getBaseApiUrl()}/static/tournament-logos/${tournamentDataFull.logo_path}`}
-        style={{ maxWidth: '400px' }}
-      />
-    </>
+    <Image
+      radius="lg"
+      mt="1rem"
+      alt="Logo of the tournament"
+      src={`${getBaseApiUrl()}/static/tournament-logos/${tournamentDataFull.logo_path}`}
+      style={{ maxWidth: '400px' }}
+    />
   ) : null;
 }
 
 export function getTournamentHeadTitle(tournamentDataFull: Tournament) {
-  return tournamentDataFull !== null ? `Bracket | ${tournamentDataFull.name}` : 'Bracket';
+  return tournamentDataFull !== null
+    ? `Octo Tatics | ${tournamentDataFull.name}`
+    : 'Octo Tatics';
 }
 
 export function TournamentTitle({ tournamentDataFull }: { tournamentDataFull: Tournament }) {
@@ -75,13 +75,13 @@ export function TournamentTitle({ tournamentDataFull }: { tournamentDataFull: To
 }
 
 export function DoubleHeader({ tournamentData }: { tournamentData: Tournament }) {
-  const navigate = useLocation();
+  const location = useLocation();
   const endpoint = tournamentData.dashboard_endpoint || '';
-  const pathName = navigate.pathname.replace('[id]', endpoint).replace(/\/+$/, '');
+  const pathName = location.pathname.replace('[id]', endpoint).replace(/\/+$/, '');
 
   const mainLinks = [
-    { link: `/tournaments/${endpoint}/dashboard`, label: 'Matches' },
-    { link: `/tournaments/${endpoint}/dashboard/standings`, label: 'Standings' },
+    { link: `/tournaments/${endpoint}/dashboard`, label: 'Partidas' },
+    { link: `/tournaments/${endpoint}/dashboard/standings`, label: 'Classificação' },
   ];
 
   const mainItems = mainLinks.map((item) => (
@@ -99,7 +99,7 @@ export function DoubleHeader({ tournamentData }: { tournamentData: Tournament })
     <header className={classes.header}>
       <Container className={classes.inner}>
         <UnstyledButton component={PreloadLink} href={`/tournaments/${endpoint}/dashboard`}>
-          <Title size="lg" lineClamp={1}>
+          <Title size="lg" lineClamp={1} c="navy.8">
             {tournamentData.name}
           </Title>
         </UnstyledButton>
